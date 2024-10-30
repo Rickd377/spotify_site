@@ -1,0 +1,190 @@
+header {
+  height: 65px;
+  background-color: $header_color;
+  @include flex(space-between, center);
+  padding-inline: $header_padding $header_padding / 3;
+
+  img {
+    max-width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  nav {
+    @include flex(center, center, row, 0.5rem);
+    height: 48px;
+    justify-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    .fa-house-user {
+      @include flex();
+      font-size: 1.5rem;
+      color: $search-text_color;
+      cursor: pointer;
+      background-color: $nav_color;
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      transition: transform 50ms ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      &[data-title]:after {
+        bottom: -2rem;
+      }
+    }
+
+    .search {
+      @include flex(space-between);
+      position: relative;
+      height: 100%;
+      width: 475px;
+      background-color: $nav_color;
+      border-radius: 50px;
+      padding-inline: $search_padding;
+      color: $search-text_color;
+
+      &:hover {
+        background-color: $nav-hover_color;
+        .fa-magnifying-glass {
+          color: $white_color;
+        }
+      }
+
+      i {
+        font-size: 1.4rem;
+        @include flex();
+        z-index: 2;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .fa-magnifying-glass {
+        &[data-title]:after {
+          bottom: -2.9rem;
+        }
+      }
+
+      .fa-folder-magnifying-glass {
+        padding-block: 3px;
+      }
+
+      .fa-folder-magnifying-glass,
+      .fa-xmark {
+        color: $search-text_color;
+        border-left: 1px solid $search-text_color;
+        padding-left: $search_padding;
+        padding-right: $search_padding / 2;
+
+        &:hover {
+          color: $white_color;
+        }
+
+        &[data-title]:after {
+          bottom: -2.7rem;
+        }
+      }
+
+      .fa-xmark {
+        font-size: 1.6rem;
+        border: none;
+      }
+
+      .search-input {
+        background-color: transparent;
+        position: absolute;
+        left: 0;
+        border-radius: 50px;
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding-inline: $search_padding * 2 + 18px $search_padding * 2 + 28px;
+        color: $white_color;
+        font-size: 0.95rem;
+
+        &::placeholder {
+          color: $search-text_color;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:focus {
+          box-shadow: inset 0 0 0 2px $white_color;
+          cursor: text;
+        }
+      }
+    }
+  }
+
+  .profile-info {
+    @include flex(center, center, row, 25px);
+    color: white;
+
+    .install-app-header {
+      @include flex(center, center, row, 6px);
+      cursor: pointer;
+      transition: transform 50ms ease;
+      font-size: 0.8rem;
+      font-weight: 600;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+      
+      .fa-arrow-down {
+        @include flex();
+        font-size: 0.6rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 2px solid	white;
+        padding-right: 1px;
+        border-radius: 50%;
+        font-weight: 500;
+      }
+    }
+
+    .fa-bell {
+      margin-left: 15px;
+      cursor: pointer;
+      color: $search-text_color;
+
+      &:hover {
+        color: white;
+      }
+
+      &[data-title]:after {
+        bottom: -3.1rem;
+      }
+    }
+
+    .profile-img {
+      @include flex();
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      border: 8px solid lighten($header_color, 15%);
+      background-color: $header-profile_color;
+      color: black;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 50ms ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      &[data-title]:after {
+        bottom: -2.9rem;
+      }
+    }
+  }
+}

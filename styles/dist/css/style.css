@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+
+[data-title]:after {
+  content: attr(data-title);
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 0.85rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 99999;
+  visibility: hidden;
+  font-family: "Poppins", sans-serif;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+[data-title] {
+  position: relative;
+}
+
+header {
+  height: 65px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  padding-inline: 28px 9.3333333333px;
+}
+header img {
+  max-width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  height: 48px;
+  justify-self: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header nav .fa-house-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  font-size: 1.5rem;
+  color: #b3b3b3;
+  cursor: pointer;
+  background-color: #1f1f1f;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  transition: transform 50ms ease;
+}
+header nav .fa-house-user:hover {
+  transform: scale(1.02);
+}
+header nav .fa-house-user[data-title]:after {
+  bottom: -2rem;
+}
+header nav .search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  position: relative;
+  height: 100%;
+  width: 475px;
+  background-color: #1f1f1f;
+  border-radius: 50px;
+  padding-inline: 13px;
+  color: #b3b3b3;
+}
+header nav .search:hover {
+  background-color: #2a2a2a;
+}
+header nav .search:hover .fa-magnifying-glass {
+  color: white;
+}
+header nav .search i {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+}
+header nav .search .fa-magnifying-glass[data-title]:after {
+  bottom: -2.9rem;
+}
+header nav .search .fa-folder-magnifying-glass {
+  padding-block: 3px;
+}
+header nav .search .fa-folder-magnifying-glass,
+header nav .search .fa-xmark {
+  color: #b3b3b3;
+  border-left: 1px solid #b3b3b3;
+  padding-left: 13px;
+  padding-right: 6.5px;
+}
+header nav .search .fa-folder-magnifying-glass:hover,
+header nav .search .fa-xmark:hover {
+  color: white;
+}
+header nav .search .fa-folder-magnifying-glass[data-title]:after,
+header nav .search .fa-xmark[data-title]:after {
+  bottom: -2.7rem;
+}
+header nav .search .fa-xmark {
+  font-size: 1.6rem;
+  border: none;
+}
+header nav .search .search-input {
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  border-radius: 50px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-inline: 44px 54px;
+  color: white;
+  font-size: 0.95rem;
+}
+header nav .search .search-input::-moz-placeholder {
+  color: #b3b3b3;
+}
+header nav .search .search-input::placeholder {
+  color: #b3b3b3;
+}
+header nav .search .search-input:hover {
+  cursor: pointer;
+}
+header nav .search .search-input:focus {
+  box-shadow: inset 0 0 0 2px white;
+  cursor: text;
+}
+header .profile-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 25px;
+  color: white;
+}
+header .profile-info .install-app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 50ms ease;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+header .profile-info .install-app-header:hover {
+  transform: scale(1.05);
+}
+header .profile-info .install-app-header .fa-arrow-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  font-size: 0.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid white;
+  padding-right: 1px;
+  border-radius: 50%;
+  font-weight: 500;
+}
+header .profile-info .fa-bell {
+  margin-left: 15px;
+  cursor: pointer;
+  color: #b3b3b3;
+}
+header .profile-info .fa-bell:hover {
+  color: white;
+}
+header .profile-info .fa-bell[data-title]:after {
+  bottom: -3.1rem;
+}
+header .profile-info .profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 8px solid #262626;
+  background-color: #b49bc8;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 50ms ease;
+}
+header .profile-info .profile-img:hover {
+  transform: scale(1.02);
+}
+header .profile-info .profile-img[data-title]:after {
+  bottom: -2.9rem;
+}/*# sourceMappingURL=style.css.map */
