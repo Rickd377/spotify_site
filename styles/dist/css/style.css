@@ -38,6 +38,7 @@ a {
   background-color: #1f1f1f;
   color: white;
   font-size: 0.85rem;
+  font-weight: 500 !important;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -65,8 +66,9 @@ header {
   padding-inline: 28px 9.3333333333px;
 }
 header img {
-  max-width: 32px;
-  height: 32px;
+  width: 33px;
+  height: 33px;
+  margin-top: -2px;
   cursor: pointer;
 }
 header nav {

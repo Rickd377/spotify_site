@@ -5,8 +5,9 @@ header {
   padding-inline: $header_padding $header_padding / 3;
 
   img {
-    max-width: 32px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
+    margin-top: -2px;
     cursor: pointer;
   }
 
