@@ -1,0 +1,24 @@
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+[data-title]:after {
+  content: attr(data-title);
+  background-color: $nav_color;
+  color: $white_color;
+  font-size: 0.85rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 99999;
+  visibility: hidden;
+  font-family: "Poppins", sans-serif;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+[data-title] {
+  position: relative;
+}
