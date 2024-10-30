@@ -1,0 +1,88 @@
+.left-side {
+  background-color: $side_color;
+  width: 22%;
+  min-height: 100px;
+  max-height: fit-content;
+  color: $search-text_color;
+  padding: 12px 16px 8px;
+  border-radius: 8px;
+
+  .left-top {
+    @include flex(space-between, center, row);
+    height: 40px;
+    padding-inline: 8px;
+
+    .separator {
+      @include flex(center, center, row, 0.8rem);
+
+      &:first-child {
+        font-weight: 600;
+
+        &[data-title]:after {
+          bottom: 2.5rem;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+          fill: $search-text_color;
+        }
+
+        &:hover {
+          color: $white_color;
+          cursor: pointer;
+
+          svg {
+            fill: $white_color !important;
+          }
+        }
+      }
+
+      &:last-child {
+        gap: 8px;
+        font-size: 1.2rem;
+
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
+          padding-top: 2px;
+          border-radius: 50%;
+          cursor: pointer;
+
+          &[data-title]:after {
+            bottom: 2.5rem;
+          }
+
+          &:hover {
+            color: $white_color;
+            background-color: $nav-hover_color;
+          }
+        }
+      }
+    }
+  }
+
+  .sort-btns {
+    @include flex(space-between);
+    width: 97%;
+    margin-top: 15px;
+
+    button {
+      padding: 7px 12px;
+      border-radius: 50px;
+      background-color: $nav-hover_color;
+      color: $white_color;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+
+      &:hover {
+        background-color: lighten($nav-hover_color, 3.5%); //#333
+      }
+    }
+  }
+}

@@ -3,6 +3,9 @@ header {
   background-color: $header_color;
   @include flex(space-between, center);
   padding-inline: $header_padding $header_padding / 3;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   img {
     width: 33px;
@@ -71,11 +74,11 @@ header {
         }
       }
 
-      .fa-folder-magnifying-glass {
+      .fa-album-collection {
         padding-block: 3px;
       }
 
-      .fa-folder-magnifying-glass,
+      .fa-album-collection,
       .fa-xmark {
         color: $search-text_color;
         border-left: 1px solid $search-text_color;

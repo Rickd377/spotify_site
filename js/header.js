@@ -1,14 +1,14 @@
 const input = document.querySelector('.search-input');
-const folderIcon = document.querySelector('.fa-folder-magnifying-glass');
+const folderIcon = document.querySelector('.fa-album-collection');
 
 input.addEventListener('input', () => {
   if (input.value.trim() !== '') {
-    folderIcon.classList.remove('fa-folder-magnifying-glass');
+    folderIcon.classList.remove('fa-album-collection');
     folderIcon.classList.add('fa-xmark');
     folderIcon.setAttribute('data-title', 'Clear search field');
   } else {
     folderIcon.classList.remove('fa-xmark');
-    folderIcon.classList.add('fa-folder-magnifying-glass');
+    folderIcon.classList.add('fa-album-collection');
     folderIcon.setAttribute('data-title', 'Browse');
   }
 });
@@ -20,7 +20,7 @@ folderIcon.addEventListener('mousedown', (event) => {
     input.focus();
     setTimeout(() => {
       folderIcon.classList.remove('fa-xmark');
-      folderIcon.classList.add('fa-folder-magnifying-glass');
+      folderIcon.classList.add('fa-album-collection');
       folderIcon.setAttribute('data-title', 'Browse');
     }, 150);
   }
