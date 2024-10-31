@@ -14,6 +14,7 @@ html {
 
 body {
   background-color: black;
+  overflow: hidden;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -50,8 +51,6 @@ main {
   font-size: 0.85rem;
   font-weight: 500 !important;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   white-space: nowrap;
   opacity: 0;
   z-index: 99999;
@@ -104,7 +103,7 @@ header nav .fa-house-user {
   flex-direction: row;
   gap: 0;
   font-size: 1.5rem;
-  color: #b3b3b3;
+  color: white;
   cursor: pointer;
   background-color: #1f1f1f;
   height: 48px;
@@ -112,11 +111,13 @@ header nav .fa-house-user {
   border-radius: 50%;
   transition: transform 50ms ease;
 }
-header nav .fa-house-user:hover {
-  transform: scale(1.02);
-}
 header nav .fa-house-user[data-title]:after {
   bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header nav .fa-house-user:hover {
+  transform: scale(1.02);
 }
 header nav .search {
   display: flex;
@@ -151,6 +152,8 @@ header nav .search i {
 }
 header nav .search .fa-magnifying-glass[data-title]:after {
   bottom: -2.9rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 header nav .search .fa-album-collection {
   padding-block: 3px;
@@ -162,13 +165,15 @@ header nav .search .fa-xmark {
   padding-left: 13px;
   padding-right: 6.5px;
 }
-header nav .search .fa-album-collection:hover,
-header nav .search .fa-xmark:hover {
-  color: white;
-}
 header nav .search .fa-album-collection[data-title]:after,
 header nav .search .fa-xmark[data-title]:after {
   bottom: -2.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header nav .search .fa-album-collection:hover,
+header nav .search .fa-xmark:hover {
+  color: white;
 }
 header nav .search .fa-xmark {
   font-size: 1.6rem;
@@ -246,6 +251,8 @@ header .profile-info .fa-bell:hover {
 }
 header .profile-info .fa-bell[data-title]:after {
   bottom: -3.1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 header .profile-info .profile-img {
   display: flex;
@@ -264,22 +271,36 @@ header .profile-info .profile-img {
   cursor: pointer;
   transition: transform 50ms ease;
 }
-header .profile-info .profile-img:hover {
-  transform: scale(1.02);
-}
 header .profile-info .profile-img[data-title]:after {
   bottom: -2.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .profile-info .profile-img:hover {
+  transform: scale(1.02);
 }
 
 .left-side {
   background-color: #121212;
-  width: 22%;
+  width: 420px;
   min-height: 100px;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
+  max-height: 759px;
   color: #b3b3b3;
-  padding: 12px 16px 8px;
+  padding: 12px 8px 8px;
   border-radius: 8px;
+  position: relative;
+}
+.left-side .resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  cursor: grab;
+  background-color: transparent;
+}
+.left-side .left-seperator {
+  padding-inline: 8px;
 }
 .left-side .left-top {
   display: flex;
@@ -288,7 +309,7 @@ header .profile-info .profile-img[data-title]:after {
   flex-direction: row;
   gap: 0;
   height: 40px;
-  padding-inline: 8px;
+  padding-inline: 8px 0;
 }
 .left-side .left-top .separator {
   display: flex;
@@ -299,9 +320,12 @@ header .profile-info .profile-img[data-title]:after {
 }
 .left-side .left-top .separator:first-child {
   font-weight: 600;
+  font-size: 0.93rem;
 }
 .left-side .left-top .separator:first-child[data-title]:after {
   bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .left-side .left-top .separator:first-child svg {
   width: 24px;
@@ -321,8 +345,10 @@ header .profile-info .profile-img[data-title]:after {
 }
 .left-side .left-top .separator:last-child i {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
   width: 2rem;
   height: 2rem;
   padding-top: 2px;
@@ -331,6 +357,8 @@ header .profile-info .profile-img[data-title]:after {
 }
 .left-side .left-top .separator:last-child i[data-title]:after {
   bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .left-side .left-top .separator:last-child i:hover {
   color: white;
@@ -342,8 +370,25 @@ header .profile-info .profile-img[data-title]:after {
   align-items: center;
   flex-direction: row;
   gap: 0;
-  width: 97%;
-  margin-top: 15px;
+  width: 100%;
+  max-width: 388px;
+  white-space: nowrap;
+  margin-block: 15px 10px;
+  position: relative;
+}
+.left-side .sort-btns::before {
+  content: "";
+  position: absolute;
+  width: 108%;
+  height: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.left-side .sort-btns.scrolled::before {
+  display: block;
 }
 .left-side .sort-btns button {
   padding: 7px 12px;
@@ -357,4 +402,132 @@ header .profile-info .profile-img[data-title]:after {
 }
 .left-side .sort-btns button:hover {
   background-color: #333333;
+}
+.left-side .left-playlist-list {
+  margin-top: 5px;
+  width: 100%;
+  max-height: 650px;
+  overflow: hidden;
+  padding-right: 22px;
+}
+.left-side .left-playlist-list:hover {
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.left-side .left-playlist-list:hover::-webkit-scrollbar {
+  width: 12px;
+}
+.left-side .left-playlist-list:hover::-webkit-scrollbar-track {
+  background: #121212;
+  border-radius: 10px;
+}
+.left-side .left-playlist-list:hover::-webkit-scrollbar-thumb {
+  background-color: #676767;
+}
+.left-side .left-playlist-list:hover::-webkit-scrollbar-thumb:hover {
+  background-color: #8d8d8d;
+}
+.left-side .left-playlist-list .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  padding: 6px 0 6px 18px;
+}
+.left-side .left-playlist-list .navigation .fa-magnifying-glass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding-top: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: -10px;
+}
+.left-side .left-playlist-list .navigation .fa-magnifying-glass[data-title]:after {
+  bottom: 2.6rem;
+  left: 4.3rem;
+  transform: translateX(-50%);
+}
+.left-side .left-playlist-list .navigation .fa-magnifying-glass:hover {
+  color: white;
+  background-color: #2a2a2a;
+}
+.left-side .left-playlist-list .navigation i {
+  font-size: 1rem !important;
+}
+.left-side .left-playlist-list .navigation .recents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 50ms ease;
+}
+.left-side .left-playlist-list .navigation .recents:hover {
+  color: white;
+  transform: scale(1.05);
+}
+.left-side .left-playlist-list .playlists .playlist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 8px;
+  border-radius: 5px;
+}
+.left-side .left-playlist-list .playlists .playlist:hover {
+  background-color: #2a2a2a;
+  cursor: pointer;
+}
+.left-side .left-playlist-list .playlists .playlist:hover .fa-play {
+  display: block;
+}
+.left-side .left-playlist-list .playlists .playlist:hover .album-list-img {
+  filter: brightness(0.7);
+}
+.left-side .left-playlist-list .playlists .playlist .img-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 10px;
+  position: relative;
+}
+.left-side .left-playlist-list .playlists .playlist .img-wrapper i {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: white;
+  z-index: 999;
+}
+.left-side .left-playlist-list .playlists .playlist .album-list-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 3px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.left-side .left-playlist-list .playlists .playlist .playlist-title {
+  font-size: 1rem;
+  color: white;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.left-side .left-playlist-list .playlists .playlist .playlist-type {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }/*# sourceMappingURL=style.css.map */

@@ -1,26 +1,39 @@
 .left-side {
   background-color: $side_color;
-  width: 22%;
+  width: 420px;
   min-height: 100px;
-  max-height: fit-content;
+  max-height: 759px;
   color: $search-text_color;
-  padding: 12px 16px 8px;
+  padding: 12px 8px 8px;
   border-radius: 8px;
+  position: relative;
+
+  .resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    cursor: grab;
+    background-color: transparent;
+  }
+
+  .left-seperator {
+    padding-inline: 8px
+  }
 
   .left-top {
     @include flex(space-between, center, row);
     height: 40px;
-    padding-inline: 8px;
+    padding-inline: 8px 0;
 
     .separator {
       @include flex(center, center, row, 0.8rem);
 
       &:first-child {
         font-weight: 600;
-
-        &[data-title]:after {
-          bottom: 2.5rem;
-        }
+        font-size: 0.93rem;
+        @include datatitle(2.5rem);
 
         svg {
           width: 24px;
@@ -43,18 +56,14 @@
         font-size: 1.2rem;
 
         i {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include flex();
           width: 2rem;
           height: 2rem;
           padding-top: 2px;
           border-radius: 50%;
           cursor: pointer;
 
-          &[data-title]:after {
-            bottom: 2.5rem;
-          }
+          @include datatitle(2.5rem);
 
           &:hover {
             color: $white_color;
@@ -67,8 +76,27 @@
 
   .sort-btns {
     @include flex(space-between);
-    width: 97%;
-    margin-top: 15px;
+    width: 100%;
+    max-width: 388px;
+    white-space: nowrap;
+    margin-block: 15px 10px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 108%;
+      height: 20px;
+      background: linear-gradient(rgba($header_color, 0.5), transparent);
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+    }
+
+    &.scrolled::before {
+      display: block;
+    }
 
     button {
       padding: 7px 12px;
@@ -82,6 +110,144 @@
 
       &:hover {
         background-color: lighten($nav-hover_color, 3.5%); //#333
+      }
+    }
+  }
+
+  .left-playlist-list {
+    margin-top: 5px;
+    // background-color: white; //testing
+    width: 100%;
+    max-height: 650px;
+    overflow: hidden;
+    padding-right: 22px;
+    
+    &:hover {
+      overflow-y: auto;
+      padding-right: 10px;
+
+      &::-webkit-scrollbar {
+        width: 12px;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background: $side_color;
+        border-radius: 10px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: darken($search-text_color, 30%);
+      }
+  
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: darken($search-text_color, 15%);
+      }
+    }
+    
+    .navigation {
+      @include flex(space-between);
+      padding: 6px 0 6px 18px;
+
+      .fa-magnifying-glass {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        padding-top: 2px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-left: -10px;
+
+        @include datatitle(2.6rem, 4.3rem);
+
+        &:hover {
+          color: $white_color;
+          background-color: $nav-hover_color;
+        }
+      }
+
+      i {
+        font-size: 1rem !important;
+      }
+
+      .recents {
+        @include flex();
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 50ms ease;
+
+        &:hover {
+          color: $white_color;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .playlists {
+      // background-color: green; //testing
+
+      .playlist {
+        @include flex(flex-start, center, row, 0.5rem);
+        padding: 8px;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: $nav-hover_color;
+          cursor: pointer;
+
+          .fa-play {
+            display: block;
+          }
+
+          .album-list-img {
+            filter: brightness(0.7);
+          }
+        }
+
+        .img-wrapper {
+          width: 48px;
+          height: 48px;
+          border-radius: 3px;
+          overflow: hidden;
+          margin-right: 10px;
+          position: relative;
+
+          i {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            color: $white_color;
+            z-index: 999;
+          }
+        }
+
+        .album-list-img {
+          width: 48px;
+          height: 48px;
+          border-radius: 3px;
+          object-fit: cover;
+        }
+
+        .playlist-title {
+          font-size: 1rem;
+          color: $white_color;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .playlist-type {
+          font-size: 0.8rem;
+          color: $search-text_color;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
       }
     }
   }
