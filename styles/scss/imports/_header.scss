@@ -26,21 +26,19 @@ header {
     .fa-house-user {
       @include flex();
       font-size: 1.5rem;
-      color: $search-text_color;
+      color: $white_color;
       cursor: pointer;
       background-color: $nav_color;
       height: 48px;
       width: 48px;
       border-radius: 50%;
       transition: transform 50ms ease;
+      @include datatitle(-2rem);
 
       &:hover {
         transform: scale(1.02);
       }
 
-      &[data-title]:after {
-        bottom: -2rem;
-      }
     }
 
     .search {
@@ -69,9 +67,7 @@ header {
       }
 
       .fa-magnifying-glass {
-        &[data-title]:after {
-          bottom: -2.9rem;
-        }
+        @include datatitle(-2.9rem);
       }
 
       .fa-album-collection {
@@ -84,13 +80,10 @@ header {
         border-left: 1px solid $search-text_color;
         padding-left: $search_padding;
         padding-right: $search_padding / 2;
+        @include datatitle(-2.7rem);
 
         &:hover {
           color: $white_color;
-        }
-
-        &[data-title]:after {
-          bottom: -2.7rem;
         }
       }
 
@@ -164,9 +157,7 @@ header {
         color: white;
       }
 
-      &[data-title]:after {
-        bottom: -3.1rem;
-      }
+      @include datatitle(-3.1rem);
     }
 
     .profile-img {
@@ -181,13 +172,10 @@ header {
       font-weight: 600;
       cursor: pointer;
       transition: transform 50ms ease;
+      @include datatitle(-2.9rem);
 
       &:hover {
         transform: scale(1.02);
-      }
-
-      &[data-title]:after {
-        bottom: -2.9rem;
       }
     }
   }

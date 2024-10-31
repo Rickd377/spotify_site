@@ -6,7 +6,8 @@
   <link rel="icon" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
   <link rel="stylesheet" href="./styles/dist/css/style.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
-  <title>Spotify – Search</title>
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+  <title>Spotify - Web Player: Music for everyone</title>
 </head>
 <body>
   <header>
@@ -31,27 +32,202 @@
 
   <main>
     <div class="left-side">
-      <div class="left-top">
-        <div class="separator" data-title="Collapse Your Library">
-          <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE">
-            <path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path>
-          </svg>
-          Your Library
+      <div class="left-seperator">
+        <div class="left-top">
+          <div class="separator" data-title="Collapse Your Library">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE">
+              <path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path>
+            </svg>
+            Your Library
+          </div>
+          <div class="separator">
+            <i class="fa-light fa-plus" data-title="Create Playlist or folder"></i>
+            <i class="fa-light fa-arrow-right" data-title="Show more"></i>
+          </div>
         </div>
-        <div class="separator">
-          <i class="fa-light fa-plus" data-title="Create Playlist or folder"></i>
-          <i class="fa-light fa-arrow-right" data-title="Show more"></i>
+        <div class="sort-btns">
+          <button>Playlists</button>
+          <button>Artists</button>
+          <button>Albums</button>
+          <button>Podcasts & Shows</button>
         </div>
       </div>
-      <div class="sort-btns">
-        <button>Playlists</button>
-        <button>Artists</button>
-        <button>Albums</button>
-        <button>Podcasts & Shows</button>
+      <div class="left-playlist-list">
+        <div class="navigation">
+          <i class="fa-light fa-magnifying-glass" data-title="Search in Your Library"></i>
+          <div class="recents">
+            Recents
+            <i class="fa-regular fa-list-ul"></i>
+          </div>
+        </div>
+        <div class="playlists">
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 1</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 2</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 3</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 4</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 5</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 6</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 7</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="img-wrapper">
+              <i class="fa-sharp fa-solid fa-play"></i>
+              <img class="album-list-img" src="https://via.placeholder.com/300x300" alt="album cover">
+            </div>
+            <div class="text-wrapper-list">
+              <div class="playlist-title">Playlist 8</div>
+              <div class="playlist-type">Playlist • Spotify</div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="resize-handle"></div>
     </div>
   </main>
   
   <script src="./js/header.js"></script>
+  <script src="./js/rezise.js"></script>
 </body>
 </html>
