@@ -3,9 +3,6 @@ header {
   background-color: $header_color;
   @include flex(space-between, center);
   padding-inline: $header_padding $header_padding / 3;
-  position: fixed;
-  top: 0;
-  width: 100%;
 
   img {
     width: 33px;

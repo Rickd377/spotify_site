@@ -4,18 +4,26 @@
   min-height: 100px;
   max-height: 759px;
   color: $search-text_color;
-  padding: 12px 8px 8px;
+  padding: 12px 0px 8px 8px;
   border-radius: 8px;
   position: relative;
+  flex-shrink: 0;
 
   .resize-handle {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 8px;
-    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 2px);
+    width: 4px;
+    height: 98%;
     cursor: grab;
     background-color: transparent;
+    box-shadow: inset 0 0 0 2px $header_color;
+    
+    &:hover {
+      box-shadow: inset 0 0 0 1.3px $header_color;
+      background-color: $search-text_color;
+    }
   }
 
   .left-seperator {
@@ -149,9 +157,7 @@
       padding: 6px 0 6px 18px;
 
       .fa-magnifying-glass {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex();
         width: 2rem;
         height: 2rem;
         padding-top: 2px;
@@ -207,8 +213,10 @@
         }
 
         .img-wrapper {
-          width: 48px;
-          height: 48px;
+          min-width: 48px;
+          min-height: 48px;
+          max-width: 48px;
+          max-height: 48px;
           border-radius: 3px;
           overflow: hidden;
           margin-right: 10px;
@@ -232,21 +240,29 @@
           border-radius: 3px;
           object-fit: cover;
         }
+      }
 
+      .text-wrapper-list {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%; // Ensure the parent container has a defined width
+      
         .playlist-title {
           font-size: 1rem;
           color: $white_color;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
+          width: 100%; // Ensure the child element has a defined width
         }
-
+      
         .playlist-type {
           font-size: 0.8rem;
           color: $search-text_color;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
+          width: 100%; // Ensure the child element has a defined width
         }
       }
     }
