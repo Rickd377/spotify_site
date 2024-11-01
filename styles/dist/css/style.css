@@ -43,7 +43,7 @@ main {
 
 [data-title]:hover:after {
   opacity: 1;
-  transition: all 0.1s ease 0.5s;
+  transition: opacity 0s 0.4s;
   visibility: visible;
 }
 
@@ -385,6 +385,137 @@ footer .footer-left .fa-circle-plus[data-title]:after {
 footer .footer-left .fa-circle-plus:hover {
   color: white;
 }
+footer .footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 5px;
+  width: 100%;
+  height: 100%;
+}
+footer .footer-middle .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  gap: 26px;
+}
+footer .footer-middle .icons .fa-backward-step,
+footer .footer-middle .icons .fa-forward-step {
+  transform: scaleX(1.25);
+}
+footer .footer-middle .icons .fa-backward-step:hover,
+footer .footer-middle .icons .fa-forward-step:hover {
+  transform: scale(1.25, 1.08);
+}
+footer .footer-middle .icons .fa-arrows-repeat,
+footer .footer-middle .icons .fa-shuffle {
+  position: relative;
+}
+footer .footer-middle .icons .shuffle-dot,
+footer .footer-middle .icons .repeat-dot {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: #1db954;
+  border-radius: 50%;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+footer .footer-middle .icons i {
+  cursor: pointer;
+  color: #b3b3b3;
+  font-size: 1.1rem;
+}
+footer .footer-middle .icons i:hover {
+  color: white;
+  transform: scale(1.02);
+}
+footer .footer-middle .icons i:hover[data-title]:after {
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer .footer-middle .icons .fa-circle-play,
+footer .footer-middle .icons .fa-circle-pause {
+  font-size: 2rem;
+  color: white;
+}
+footer .footer-middle .icons .fa-circle-play:hover[data-title]:after,
+footer .footer-middle .icons .fa-circle-pause:hover[data-title]:after {
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer .footer-middle .progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  width: 100%;
+  position: relative;
+}
+footer .footer-middle .progress-container .remaining-time,
+footer .footer-middle .progress-container .elapsed-time {
+  position: absolute;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  pointer-events: none;
+}
+footer .footer-middle .progress-container .remaining-time {
+  left: calc(100% + 8px);
+}
+footer .footer-middle .progress-container .elapsed-time {
+  right: calc(100% + 8px);
+}
+footer .footer-middle .progress-container progress {
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+footer .footer-middle .progress-container progress::-webkit-progress-bar {
+  background-color: #4d4d4d;
+}
+footer .footer-middle .progress-container progress::-webkit-progress-value {
+  background-color: white;
+  border-radius: 10px;
+}
+footer .footer-middle .progress-container progress::-moz-progress-bar {
+  background-color: white;
+  border-radius: 10px;
+}
+footer .footer-middle .progress-container .progress-dot {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  cursor: pointer;
+}
+footer .footer-middle .progress-container:hover .progress-dot {
+  display: block;
+}
+footer .footer-middle .progress-container:hover progress::-webkit-progress-value {
+  background-color: #1db954;
+}
+footer .footer-middle .progress-container:hover progress::-moz-progress-bar {
+  background-color: #1db954;
+}
 footer .footer-right {
   justify-self: end;
   display: flex;
@@ -394,34 +525,88 @@ footer .footer-right {
   gap: 0;
   gap: 0.8rem;
 }
-footer .footer-right svg,
+footer .footer-right .fa-arrows-minimize:hover[data-title]:after {
+  bottom: 2rem;
+  left: -0.5rem;
+  transform: translateX(-50%);
+}
+footer .footer-right .fa-square-caret-right {
+  font-size: 1.3rem;
+}
+footer .footer-right .fa-volume-xmark,
+footer .footer-right .fa-volume-low,
+footer .footer-right .fa-volume-high {
+  width: 1rem;
+}
 footer .footer-right i {
   cursor: pointer;
   fill: #b3b3b3;
   color: #b3b3b3;
 }
-footer .footer-right svg:hover,
+footer .footer-right i:last-child:hover[data-title]:after {
+  bottom: 2rem;
+  left: -1rem;
+  transform: translateX(-50%);
+}
 footer .footer-right i:hover {
   fill: white;
   color: white;
 }
-footer .footer-right svg:hover[data-title]:after,
 footer .footer-right i:hover[data-title]:after {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
 }
-footer .footer-right svg {
-  width: 1rem;
-  height: 1rem;
-}
-footer .footer-right .volume-wrapper {
+footer .footer-right .volume-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 0;
+  width: 100%;
   gap: 0.8rem;
+  position: relative;
+}
+footer .footer-right .volume-container progress {
+  width: 90px;
+  height: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+footer .footer-right .volume-container progress::-webkit-progress-bar {
+  background-color: #4d4d4d;
+}
+footer .footer-right .volume-container progress::-webkit-progress-value {
+  background-color: white;
+  border-radius: 10px;
+}
+footer .footer-right .volume-container progress::-moz-progress-bar {
+  background-color: white;
+  border-radius: 10px;
+}
+footer .footer-right .volume-container .progress-dot {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  cursor: pointer;
+}
+footer .footer-right .volume-container:hover .progress-dot {
+  display: block;
+}
+footer .footer-right .volume-container:hover progress::-webkit-progress-value {
+  background-color: #1db954;
+}
+footer .footer-right .volume-container:hover progress::-moz-progress-bar {
+  background-color: #1db954;
 }
 
 .left-side {
@@ -434,6 +619,7 @@ footer .footer-right .volume-wrapper {
   border-radius: 8px;
   position: relative;
   flex-shrink: 0;
+  margin-left: 0px;
 }
 .left-side .resize-handle {
   position: absolute;
