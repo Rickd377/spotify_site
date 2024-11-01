@@ -9,7 +9,9 @@ html {
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -22,8 +24,6 @@ body {
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-  margin: 0;
-  padding: 0;
   font-weight: normal;
 }
 
@@ -230,19 +230,8 @@ header .profile-info .install-app-header {
 header .profile-info .install-app-header:hover {
   transform: scale(1.05);
 }
-header .profile-info .install-app-header .fa-arrow-down {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 0;
-  font-size: 0.6rem;
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 2px solid white;
-  padding-right: 1px;
-  border-radius: 50%;
-  font-weight: 500;
+header .profile-info .install-app-header .fa-circle-arrow-down {
+  font-size: 1.02rem;
 }
 header .profile-info .fa-bell {
   margin-left: 15px;
@@ -535,7 +524,7 @@ footer .footer-right {
   align-items: center;
   flex-direction: row;
   gap: 0;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 footer .footer-right .fa-arrows-minimize:hover[data-title]:after {
   bottom: 2rem;
@@ -545,10 +534,16 @@ footer .footer-right .fa-arrows-minimize:hover[data-title]:after {
 footer .footer-right .fa-square-caret-right {
   font-size: 1.3rem;
 }
+footer .footer-right .fa-square-caret-right:not([data-title]::after) {
+  transform: scaleX(0.85);
+}
 footer .footer-right .fa-volume-xmark,
 footer .footer-right .fa-volume-low,
 footer .footer-right .fa-volume-high {
   width: 1rem;
+}
+footer .footer-right .fa-arrow-up-right-and-arrow-down-left-from-center {
+  font-size: 0.9rem;
 }
 footer .footer-right i {
   cursor: pointer;
@@ -893,6 +888,12 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   width: 100%;
 }
 .left-side .left-playlist-list .playlists .text-wrapper-list .playlist-type {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  gap: 0.5rem;
   font-size: 0.8rem;
   color: #b3b3b3;
   text-overflow: ellipsis;
@@ -900,10 +901,191 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   white-space: nowrap;
   width: 100%;
 }
+.left-side .left-playlist-list .playlists .text-wrapper-list .playlist-type svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  fill: #1db954;
+}
 
 .main-page {
   max-height: 759px;
   background-color: #121212;
   border-radius: 8px;
   flex-grow: 1;
+}
+
+.right-side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  flex-direction: column;
+  gap: 0;
+  background-color: #121212;
+  width: 420px;
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+}
+.right-side .right-resize-handle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(100% + 2px);
+  width: 4px;
+  height: 98%;
+  cursor: grab;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px black;
+}
+.right-side .right-resize-handle:hover {
+  box-shadow: inset 0 0 0 1.3px black;
+  background-color: #b3b3b3;
+}
+.right-side .right-top-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  width: 100%;
+}
+.right-side .right-top-navigation p {
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.right-side .right-top-navigation p:hover {
+  text-decoration: underline;
+}
+.right-side .right-top-navigation .top-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  gap: 0.5rem;
+  color: #b3b3b3;
+}
+.right-side .right-top-navigation .top-icons i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  width: 2rem;
+  height: 2rem;
+  padding-top: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.right-side .right-top-navigation .top-icons i[data-title]:after {
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.right-side .right-top-navigation .top-icons i:hover {
+  color: white;
+  background-color: #2a2a2a;
+}
+.right-side .right-top-navigation .top-icons i:hover.fa-ellipsis {
+  background-color: transparent;
+}
+.right-side .big-album-cover-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.right-side .video-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  gap: 10px;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 50px;
+  background-color: #2a2a2a;
+  transition: transform 50ms ease;
+  padding: 9px 14px;
+  margin-top: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.right-side .video-btn:hover {
+  transform: scale(1.02);
+}
+.right-side .video-btn i {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+.right-side .song-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  margin-top: 15px;
+}
+.right-side .song-info .icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  gap: 15px;
+}
+.right-side .song-info .icon-wrapper .fa-arrow-up-right-from-square {
+  display: none;
+}
+.right-side .song-info .fa-circle-plus,
+.right-side .song-info .fa-arrow-up-right-from-square {
+  font-size: 1.3rem;
+  color: white;
+  cursor: pointer;
+}
+.right-side .song-info .fa-circle-plus:hover,
+.right-side .song-info .fa-arrow-up-right-from-square:hover {
+  transform: scale(1.02);
+}
+.right-side .song-info .fa-arrow-up-right-from-square {
+  color: #b3b3b3;
+}
+.right-side .song-info .fa-arrow-up-right-from-square:hover {
+  color: white;
+}
+.right-side .song-info .song-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  gap: 0;
+  color: white;
+}
+.right-side .song-info .song-text .song-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.right-side .song-info .song-text .song-title:hover {
+  text-decoration: underline;
+}
+.right-side .song-info .song-text .song-artists {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+.right-side .song-info .song-text .song-artists span {
+  cursor: pointer;
+}
+.right-side .song-info .song-text .song-artists span:hover {
+  color: white;
+  text-decoration: underline;
+}
+.right-side .song-info:hover .fa-arrow-up-right-from-square {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

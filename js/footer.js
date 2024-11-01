@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   progress.addEventListener("input", updateProgressDot);
   updateProgressDot();
+
   const volumeProgress = document.querySelector(".volume-container progress");
   const volumeProgressDot = document.querySelector(
     ".volume-container .progress-dot"
@@ -178,4 +179,34 @@ document.addEventListener("DOMContentLoaded", function () {
       playIcon.setAttribute("data-title", "Play");
     }
   });
+
+  const chevronIcon = document.querySelector(".fa-chevron-up");
+  const caretIcon = document.querySelector(".fa-light.fa-square-caret-right");
+  const rightSide = document.querySelector(".right-side");
+  
+  // Set initial state
+  rightSide.style.display = "flex";
+  chevronIcon.classList.remove("fa-chevron-up");
+  chevronIcon.classList.add("fa-chevron-down");
+  chevronIcon.setAttribute("data-title", "Collapse");
+  caretIcon.style.color = "rgb(29, 185, 84)";
+  
+  function toggleRightSide() {
+    if (rightSide.style.display === "none" || rightSide.style.display === "") {
+      rightSide.style.display = "flex";
+      chevronIcon.classList.remove("fa-chevron-up");
+      chevronIcon.classList.add("fa-chevron-down");
+      chevronIcon.setAttribute("data-title", "Collapse");
+      caretIcon.style.color = "rgb(29, 185, 84)";
+    } else {
+      rightSide.style.display = "none";
+      chevronIcon.classList.remove("fa-chevron-down");
+      chevronIcon.classList.add("fa-chevron-up");
+      chevronIcon.setAttribute("data-title", "Expand");
+      caretIcon.style.color = "";
+    }
+  }
+  
+  chevronIcon.addEventListener("click", toggleRightSide);
+  caretIcon.addEventListener("click", toggleRightSide);
 });

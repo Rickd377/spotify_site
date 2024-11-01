@@ -244,7 +244,7 @@ footer {
   .footer-right {
     justify-self: end;
     @include flex();
-    gap: .8rem;
+    gap: 1rem;
 
     .fa-arrows-minimize {
       &:hover {
@@ -254,12 +254,20 @@ footer {
 
     .fa-square-caret-right {
       font-size: 1.3rem;
+
+      &:not([data-title]::after) {
+        transform: scaleX(0.85);
+      }
     }
 
     .fa-volume-xmark,
     .fa-volume-low,
     .fa-volume-high {
       width: 1rem;
+    }
+
+    .fa-arrow-up-right-and-arrow-down-left-from-center {
+      font-size: 0.9rem;
     }
 
     i {

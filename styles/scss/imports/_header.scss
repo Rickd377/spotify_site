@@ -19,7 +19,6 @@ header {
     left: 50%;
     transform: translateX(-50%);
 
-
     .fa-house-user {
       @include flex();
       font-size: 1.5rem;
@@ -133,15 +132,8 @@ header {
         transform: scale(1.05);
       }
       
-      .fa-arrow-down {
-        @include flex();
-        font-size: 0.6rem;
-        width: 1.2rem;
-        height: 1.2rem;
-        border: 2px solid	white;
-        padding-right: 1px;
-        border-radius: 50%;
-        font-weight: 500;
+      .fa-circle-arrow-down {
+        font-size: 1.02rem;
       }
     }
 
