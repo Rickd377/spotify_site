@@ -409,7 +409,7 @@ footer .footer-middle .icons .fa-forward-step {
 }
 footer .footer-middle .icons .fa-backward-step:hover,
 footer .footer-middle .icons .fa-forward-step:hover {
-  transform: scale(1.25, 1.08);
+  transform: scale(1.25, 1.03);
 }
 footer .footer-middle .icons .fa-arrows-repeat,
 footer .footer-middle .icons .fa-shuffle {
@@ -435,7 +435,7 @@ footer .footer-middle .icons i {
 }
 footer .footer-middle .icons i:hover {
   color: white;
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 footer .footer-middle .icons i:hover[data-title]:after {
   bottom: 2rem;
