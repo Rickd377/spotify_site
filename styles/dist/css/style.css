@@ -456,16 +456,13 @@ footer .footer-middle .icons .fa-circle-pause:hover[data-title]:after {
   left: 50%;
   transform: translateX(-50%);
 }
-footer .footer-middle .progress-container.dragging .progress-dot,
-footer .footer-middle .volume-container.dragging .progress-dot {
+footer .footer-middle .progress-container.dragging .progress-dot {
   display: block;
 }
-footer .footer-middle .progress-container.dragging progress::-webkit-progress-value,
-footer .footer-middle .volume-container.dragging progress::-webkit-progress-value {
+footer .footer-middle .progress-container.dragging progress::-webkit-progress-value {
   background-color: #1db954;
 }
-footer .footer-middle .progress-container.dragging progress::-moz-progress-bar,
-footer .footer-middle .volume-container.dragging progress::-moz-progress-bar {
+footer .footer-middle .progress-container.dragging progress::-moz-progress-bar {
   background-color: #1db954;
 }
 footer .footer-middle .progress-container {
@@ -571,6 +568,15 @@ footer .footer-right i:hover[data-title]:after {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
+}
+footer .footer-right .volume-container.dragging .progress-dot {
+  display: block;
+}
+footer .footer-right .volume-container.dragging progress::-webkit-progress-value {
+  background-color: #1db954;
+}
+footer .footer-right .volume-container.dragging progress::-moz-progress-bar {
+  background-color: #1db954;
 }
 footer .footer-right .volume-container {
   display: flex;
