@@ -1,6 +1,6 @@
 [data-title]:hover:after {
   opacity: 1;
-  transition: all 0.1s ease 0.5s;
+  transition: opacity 0s 0.4s;
   visibility: visible;
 }
 [data-title]:after {

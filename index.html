@@ -247,8 +247,22 @@
     </div>
 
     <div class="footer-middle">
+      <div class="icons">
+        <i class="fa-light fa-shuffle" data-title="Enable shuffle">
+          <div class="shuffle-dot"></div>
+        </i>
+        <i class="fa-solid fa-backward-step" data-title="Previous"></i>
+        <i class="fa-solid fa-sharp fa-circle-play" data-title="Play"></i>
+        <i class="fa-solid fa-forward-step" data-title="Next"></i>
+        <i class="fa-light fa-arrows-repeat" data-title="Enable repeat">
+          <div class="repeat-dot"></div>
+        </i>
+      </div>
       <div class="progress-container">
-        <progress class="progress-bar" value="70" max="100"></progress>
+        <div class="elapsed-time">0:00</div>
+        <progress value="0" max="100"></progress>
+        <div class="progress-dot"></div>
+        <div class="remaining-time">3:39</div>
       </div>
     </div>
 
@@ -256,16 +270,14 @@
       <i class="fa-light fa-square-caret-right" data-title="Now playing view"></i>
       <i class="fa-light fa-microphone-stand" data-title="Lyrics"></i>
       <i class="fa-sharp fa-regular fa-bars-staggered" data-title="Queue"></i>
-      <i class="fa-light fa-speaker" data-title="Mute"></i>
-      <div class="volume-wrapper">
-        <i class="fa-light fa-volume"></i>
-        <progress value="100" max="100"></progress>
+      <i class="fa-light fa-speaker" data-title="Connect to a device"></i>
+      <i class="fa-light fa-volume" data-title="Mute"></i>
+      <div class="volume-container">
+        <progress value="50" max="100"></progress>
+        <div class="progress-dot"></div>
       </div>
-      <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI">
-        <path d="M16 2.45c0-.8-.65-1.45-1.45-1.45H1.45C.65 1 0 1.65 0 2.45v11.1C0 14.35.65 15 1.45 15h5.557v-1.5H1.5v-11h13V7H16V2.45z"></path>
-        <path d="M15.25 9.007a.75.75 0 0 1 .75.75v4.493a.75.75 0 0 1-.75.75H9.325a.75.75 0 0 1-.75-.75V9.757a.75.75 0 0 1 .75-.75h5.925z"></path>
-      </svg>
-      <i class="fa-regular fa-arrow-up-right-and-arrow-down-left-from-center"></i>
+      <i class="fa-light fa-arrows-minimize" data-title="Open Miniplayer"></i>
+      <i class="fa-regular fa-arrow-up-right-and-arrow-down-left-from-center" data-title="Full screen"></i>
     </div>
   </footer>
   
