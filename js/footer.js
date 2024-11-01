@@ -1,8 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Main progress bar
-  const progress = document.querySelector('.progress-container progress');
-  const progressDot = document.querySelector('.progress-dot');
-  const progressContainer = document.querySelector('.progress-container');
+document.addEventListener("DOMContentLoaded", function () {
+  const progress = document.querySelector(".progress-container progress");
+  const progressDot = document.querySelector(".progress-dot");
+  const progressContainer = document.querySelector(".progress-container");
   let isDragging = false;
 
   function updateProgressDot() {
@@ -21,20 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
     updateProgressDot();
   }
 
-  progress.addEventListener('mousedown', function(event) {
+  progress.addEventListener("mousedown", function (event) {
     isDragging = true;
-    progressContainer.classList.add('dragging');
+    progressContainer.classList.add("dragging");
     setProgressValue(event);
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
   });
 
-  progressDot.addEventListener('mousedown', function(event) {
+  progressDot.addEventListener("mousedown", function (event) {
     isDragging = true;
-    progressContainer.classList.add('dragging');
+    progressContainer.classList.add("dragging");
     event.stopPropagation();
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
   });
 
   function onMouseMove(event) {
@@ -45,20 +44,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function onMouseUp() {
     isDragging = false;
-    progressContainer.classList.remove('dragging');
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
+    progressContainer.classList.remove("dragging");
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
   }
 
-  progress.addEventListener('input', updateProgressDot);
+  progress.addEventListener("input", updateProgressDot);
   updateProgressDot();
+  const volumeProgress = document.querySelector(".volume-container progress");
+  const volumeProgressDot = document.querySelector(
+    ".volume-container .progress-dot"
+  );
 
-  // Volume progress bar
-  const volumeProgress = document.querySelector('.volume-container progress');
-  const volumeProgressDot = document.querySelector('.volume-container .progress-dot');
-  const volumeContainer = document.querySelector('.volume-container');
-  const volumeIcon = document.querySelector('.fa-volume');
+  const volumeContainer = document.querySelector(".volume-container");
+  const volumeIcon = document.querySelector(".fa-volume");
   let isVolumeDragging = false;
+
+  function updateVolumeIcon(value) {
+    if (value === 0) {
+      volumeIcon.className = "fa-light fa-volume-xmark";
+    } else if (value <= 50) {
+      volumeIcon.className = "fa-light fa-volume-low";
+    } else {
+      volumeIcon.className = "fa-light fa-volume-high";
+    }
+  }
 
   function updateVolumeProgressDot() {
     const value = volumeProgress.value;
@@ -77,20 +87,20 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeProgressDot();
   }
 
-  volumeProgress.addEventListener('mousedown', function(event) {
+  volumeProgress.addEventListener("mousedown", function (event) {
     isVolumeDragging = true;
-    volumeContainer.classList.add('dragging');
+    volumeContainer.classList.add("dragging");
     setVolumeProgressValue(event);
-    document.addEventListener('mousemove', onVolumeMouseMove);
-    document.addEventListener('mouseup', onVolumeMouseUp);
+    document.addEventListener("mousemove", onVolumeMouseMove);
+    document.addEventListener("mouseup", onVolumeMouseUp);
   });
 
-  volumeProgressDot.addEventListener('mousedown', function(event) {
+  volumeProgressDot.addEventListener("mousedown", function (event) {
     isVolumeDragging = true;
-    volumeContainer.classList.add('dragging');
+    volumeContainer.classList.add("dragging");
     event.stopPropagation();
-    document.addEventListener('mousemove', onVolumeMouseMove);
-    document.addEventListener('mouseup', onVolumeMouseUp);
+    document.addEventListener("mousemove", onVolumeMouseMove);
+    document.addEventListener("mouseup", onVolumeMouseUp);
   });
 
   function onVolumeMouseMove(event) {
@@ -101,76 +111,71 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function onVolumeMouseUp() {
     isVolumeDragging = false;
-    volumeContainer.classList.remove('dragging');
-    document.removeEventListener('mousemove', onVolumeMouseMove);
-    document.removeEventListener('mouseup', onVolumeMouseUp);
+    volumeContainer.classList.remove("dragging");
+    document.removeEventListener("mousemove", onVolumeMouseMove);
+    document.removeEventListener("mouseup", onVolumeMouseUp);
   }
-
-  volumeProgress.addEventListener('input', updateVolumeProgressDot);
+  volumeProgress.addEventListener("input", updateVolumeProgressDot);
   updateVolumeProgressDot();
-
-  // Volume icon click event
-  volumeIcon.addEventListener('click', function() {
+  volumeIcon.addEventListener("click", function () {
     if (volumeProgress.value > 0) {
       volumeProgress.value = 0;
-      volumeIcon.className = 'fa-light fa-volume-xmark';
+      volumeIcon.className = "fa-light fa-volume-xmark";
     } else {
-      volumeProgress.value = 50; // Set to a default value, you can adjust as needed
+      volumeProgress.value = 50;
       updateVolumeIcon(volumeProgress.value);
     }
     updateVolumeProgressDot();
   });
 
-  // Shuffle and Repeat icons
-  const shuffleIcon = document.querySelector('.fa-shuffle');
-  const shuffleDot = document.querySelector('.shuffle-dot');
-  const repeatIcon = document.querySelector('.fa-arrows-repeat');
-  const repeatDot = document.querySelector('.repeat-dot');
-  let repeatState = 0; // Track the state of the repeat icon
-  
-  shuffleIcon.addEventListener('click', function() {
-    const isGreen = shuffleIcon.style.color === 'rgb(29, 185, 84)';
-    shuffleDot.style.display = isGreen ? 'none' : 'block';
-    shuffleIcon.style.color = isGreen ? 'rgb(179, 179, 179)' : 'rgb(29, 185, 84)';
-    shuffleIcon.setAttribute('data-title', isGreen ? 'Enable shuffle' : 'Disable shuffle');
+  const shuffleIcon = document.querySelector(".fa-shuffle");
+  const shuffleDot = document.querySelector(".shuffle-dot");
+  const repeatIcon = document.querySelector(".fa-arrows-repeat");
+  const repeatDot = document.querySelector(".repeat-dot");
+  let repeatState = 0;
+  shuffleIcon.addEventListener("click", function () {
+    const isGreen = shuffleIcon.style.color === "rgb(29, 185, 84)";
+    shuffleDot.style.display = isGreen ? "none" : "block";
+    shuffleIcon.style.color = isGreen
+      ? "rgb(179, 179, 179)"
+      : "rgb(29, 185, 84)";
+    shuffleIcon.setAttribute(
+      "data-title",
+      isGreen ? "Enable shuffle" : "Disable shuffle"
+    );
   });
-  
-  repeatIcon.addEventListener('click', function() {
+
+  repeatIcon.addEventListener("click", function () {
     if (repeatState === 0) {
-      // First click: turn icon green, show repeat-dot, keep fa-arrows-repeat
-      repeatIcon.style.color = 'rgb(29, 185, 84)';
-      repeatDot.style.display = 'block';
-      repeatIcon.setAttribute('data-title', 'Enable repeat one');
+      repeatIcon.style.color = "rgb(29, 185, 84)";
+      repeatDot.style.display = "block";
+      repeatIcon.setAttribute("data-title", "Enable repeat one");
       repeatState = 1;
     } else if (repeatState === 1) {
-      // Second click: change icon to fa-arrows-repeat-1, keep color green, repeat-dot stays
-      repeatIcon.classList.remove('fa-arrows-repeat');
-      repeatIcon.classList.add('fa-arrows-repeat-1');
-      repeatIcon.setAttribute('data-title', 'Disable repeat');
+      repeatIcon.classList.remove("fa-arrows-repeat");
+      repeatIcon.classList.add("fa-arrows-repeat-1");
+      repeatIcon.setAttribute("data-title", "Disable repeat");
       repeatState = 2;
     } else {
-      // Third click: revert to default (gray color, fa-arrows-repeat, hide repeat-dot)
-      repeatIcon.style.color = 'rgb(179, 179, 179)';
-      repeatIcon.classList.remove('fa-arrows-repeat-1');
-      repeatIcon.classList.add('fa-arrows-repeat');
-      repeatDot.style.display = 'none';
-      repeatIcon.setAttribute('data-title', 'Enable repeat');
+      repeatIcon.style.color = "rgb(179, 179, 179)";
+      repeatIcon.classList.remove("fa-arrows-repeat-1");
+      repeatIcon.classList.add("fa-arrows-repeat");
+      repeatDot.style.display = "none";
+      repeatIcon.setAttribute("data-title", "Enable repeat");
       repeatState = 0;
     }
   });
 
-  // Play/Pause icon
-  const playIcon = document.querySelector('.fa-circle-play');
-
-  playIcon.addEventListener('click', function() {
-    if (playIcon.classList.contains('fa-circle-play')) {
-      playIcon.classList.remove('fa-circle-play');
-      playIcon.classList.add('fa-circle-pause');
-      playIcon.setAttribute('data-title', 'Pause');
+  const playIcon = document.querySelector(".fa-circle-play");
+  playIcon.addEventListener("click", function () {
+    if (playIcon.classList.contains("fa-circle-play")) {
+      playIcon.classList.remove("fa-circle-play");
+      playIcon.classList.add("fa-circle-pause");
+      playIcon.setAttribute("data-title", "Pause");
     } else {
-      playIcon.classList.remove('fa-circle-pause');
-      playIcon.classList.add('fa-circle-play');
-      playIcon.setAttribute('data-title', 'Play');
+      playIcon.classList.remove("fa-circle-pause");
+      playIcon.classList.add("fa-circle-play");
+      playIcon.setAttribute("data-title", "Play");
     }
   });
 });
