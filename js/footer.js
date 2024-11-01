@@ -21,13 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
     updateProgressDot();
   }
 
-  progress.addEventListener('click', function(event) {
+  progress.addEventListener('mousedown', function(event) {
+    isDragging = true;
     setProgressValue(event);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
   });
 
   progressDot.addEventListener('mousedown', function(event) {
     isDragging = true;
-    setProgressValue(event);
+    event.stopPropagation(); // Prevent triggering the progress bar's mousedown event
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
@@ -81,13 +84,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  volumeProgress.addEventListener('click', function(event) {
+  volumeProgress.addEventListener('mousedown', function(event) {
+    isVolumeDragging = true;
     setVolumeProgressValue(event);
+    document.addEventListener('mousemove', onVolumeMouseMove);
+    document.addEventListener('mouseup', onVolumeMouseUp);
   });
 
   volumeProgressDot.addEventListener('mousedown', function(event) {
     isVolumeDragging = true;
-    setVolumeProgressValue(event);
+    event.stopPropagation(); // Prevent triggering the volume progress bar's mousedown event
     document.addEventListener('mousemove', onVolumeMouseMove);
     document.addEventListener('mouseup', onVolumeMouseUp);
   });
