@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Main progress bar
   const progress = document.querySelector('.progress-container progress');
   const progressDot = document.querySelector('.progress-dot');
+  const progressContainer = document.querySelector('.progress-container');
   let isDragging = false;
 
   function updateProgressDot() {
@@ -12,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function setProgressValue(event) {
-    const progressContainer = progress.parentElement;
     const rect = progressContainer.getBoundingClientRect();
     const offsetX = event.clientX - rect.left;
     const percentage = (offsetX / rect.width) * 100;
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   progress.addEventListener('mousedown', function(event) {
     isDragging = true;
+    progressContainer.classList.add('dragging');
     setProgressValue(event);
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
@@ -30,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   progressDot.addEventListener('mousedown', function(event) {
     isDragging = true;
-    event.stopPropagation(); // Prevent triggering the progress bar's mousedown event
+    progressContainer.classList.add('dragging');
+    event.stopPropagation();
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function onMouseUp() {
     isDragging = false;
+    progressContainer.classList.remove('dragging');
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
   }
@@ -53,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Volume progress bar
   const volumeProgress = document.querySelector('.volume-container progress');
   const volumeProgressDot = document.querySelector('.volume-container .progress-dot');
+  const volumeContainer = document.querySelector('.volume-container');
   const volumeIcon = document.querySelector('.fa-volume');
   let isVolumeDragging = false;
 
@@ -65,8 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function setVolumeProgressValue(event) {
-    const progressContainer = volumeProgress.parentElement;
-    const rect = progressContainer.getBoundingClientRect();
+    const rect = volumeContainer.getBoundingClientRect();
     const offsetX = event.clientX - rect.left;
     const percentage = (offsetX / rect.width) * 100;
     const value = (percentage / 100) * volumeProgress.max;
@@ -74,18 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVolumeProgressDot();
   }
 
-  function updateVolumeIcon(value) {
-    if (value === 0) {
-      volumeIcon.className = 'fa-light fa-volume-xmark';
-    } else if (value <= 50) {
-      volumeIcon.className = 'fa-light fa-volume-low';
-    } else if (value <= 100) {
-      volumeIcon.className = 'fa-light fa-volume-high';
-    }
-  }
-
   volumeProgress.addEventListener('mousedown', function(event) {
     isVolumeDragging = true;
+    volumeContainer.classList.add('dragging');
     setVolumeProgressValue(event);
     document.addEventListener('mousemove', onVolumeMouseMove);
     document.addEventListener('mouseup', onVolumeMouseUp);
@@ -93,7 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   volumeProgressDot.addEventListener('mousedown', function(event) {
     isVolumeDragging = true;
-    event.stopPropagation(); // Prevent triggering the volume progress bar's mousedown event
+    volumeContainer.classList.add('dragging');
+    event.stopPropagation();
     document.addEventListener('mousemove', onVolumeMouseMove);
     document.addEventListener('mouseup', onVolumeMouseUp);
   });
@@ -106,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function onVolumeMouseUp() {
     isVolumeDragging = false;
+    volumeContainer.classList.remove('dragging');
     document.removeEventListener('mousemove', onVolumeMouseMove);
     document.removeEventListener('mouseup', onVolumeMouseUp);
   }

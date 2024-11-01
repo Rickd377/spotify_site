@@ -158,6 +158,21 @@ footer {
           }
         }
       }
+
+    .progress-container.dragging .progress-dot,
+    .volume-container.dragging .progress-dot {
+      display: block;
+    }
+
+    .progress-container.dragging progress::-webkit-progress-value,
+    .volume-container.dragging progress::-webkit-progress-value {
+      background-color: $spotify_color;
+    }
+
+    .progress-container.dragging progress::-moz-progress-bar,
+    .volume-container.dragging progress::-moz-progress-bar {
+      background-color: $spotify_color;
+    }
   
     .progress-container {
       @include flex();
