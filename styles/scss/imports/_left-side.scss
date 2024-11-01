@@ -246,7 +246,7 @@
       .text-wrapper-list {
         overflow: hidden;
         white-space: nowrap;
-        width: 100%; // Ensure the parent container has a defined width
+        width: 100%;
       
         .playlist-title {
           font-size: 1rem;
@@ -254,16 +254,24 @@
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
-          width: 100%; // Ensure the child element has a defined width
+          width: 100%;
         }
-      
+        
         .playlist-type {
+          @include flex(flex-start);
+          gap: .5rem;
           font-size: 0.8rem;
           color: $search-text_color;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
-          width: 100%; // Ensure the child element has a defined width
+          width: 100%;
+
+          svg {
+            width: 0.8rem;
+            height: 0.8rem;
+            fill: $spotify_color;
+          }
         }
       }
     }
