@@ -434,24 +434,141 @@
 
         .text-wrapper {
           width: 100%;
-
+          
           .city,
           .artist-name,
           .time-location {
+            overflow: hidden;
             width: 100%;
-            white-space: nowrap;
-            text-overflow: ellipsis;
           }
-
+        
           .city {
             font-size: 0.95rem;
             color: $white_color;
           }
-
+        
           .artist-name,
           .time-location {
             font-size: 0.80rem;
             color: $search-text_color;
+          }
+        }
+      }
+    }
+
+    .queue {
+      width: 100%;
+      padding: .4rem;
+      background-color: $nav_color;
+      margin-top: 1rem;
+      border-radius: 8px;
+
+      .top-wrapper {
+        @include flex(space-between);
+        padding: .6rem;
+        padding-bottom: 10px;
+
+        .queue-title {
+          font-size: 1rem;
+          color: $white_color;
+          font-weight: 600;
+        }
+
+        .show-all-btn {
+          font-size: 0.9rem;
+          color: $search-text_color;
+          cursor: pointer;
+          font-weight: 600;
+
+          &:hover {
+            color: $white_color;
+            transform: scale(1.03);
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .song {
+        @include flex(flex-start, center);
+        gap: .7rem;
+        padding: .5rem;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $nav-hover_color;
+
+          .image-wrapper > .play-icon {
+            opacity: 1;
+          }
+
+          img {
+            filter: brightness(0.7);
+          }
+
+          .fa-ellipsis {
+            display: block;
+          }
+
+        }
+
+        .image-wrapper {
+          min-width: 50px;
+          min-height: 50px;
+          max-width: 50px;
+          max-height: 50px;
+          border-radius: 4px;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+          }
+
+          .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $white_color;
+            opacity: 0;
+            z-index: 3000;
+            font-size: 1.2rem;
+            @include datatitle(2rem, 4.5rem);
+          }
+        }
+
+        .text-wrapper {
+
+          .song-title {
+            font-size: 0.95rem;
+            color: $white_color;
+          }
+
+          .song-artist {
+            font-size: 0.85rem;
+            color: $search-text_color;
+            @include datatitle(1.8rem);
+
+            &:hover {
+              color: $white_color;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .fa-ellipsis {
+          color: $search-text_color;
+          font-size: 1.1rem;
+          margin-left: auto;
+          margin-right: 10px;
+          display: none;
+
+          &:hover {
+            color: $white_color;
+            @include datatitle(1.8rem, -4rem);
           }
         }
       }
