@@ -42,7 +42,10 @@ main {
   display: flex;
   gap: 8px;
   flex-grow: 1;
+<<<<<<< HEAD
   height: calc(100vh - 88px);
+=======
+>>>>>>> origin/index
 }
 
 [data-title]:hover:after {
@@ -629,7 +632,12 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
 .left-side {
   background-color: #121212;
   width: 420px;
+<<<<<<< HEAD
   height: calc(100% - 65px);
+=======
+  min-height: 100px;
+  max-height: 759px;
+>>>>>>> origin/index
   color: #b3b3b3;
   padding: 12px 0px 8px 8px;
   border-radius: 8px;
@@ -908,10 +916,17 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
 }
 
 .main-page {
+<<<<<<< HEAD
   background-color: #121212;
   border-radius: 8px;
   flex-grow: 1;
   height: calc(100% - 65px);
+=======
+  max-height: 759px;
+  background-color: #121212;
+  border-radius: 8px;
+  flex-grow: 1;
+>>>>>>> origin/index
 }
 
 .right-side {
@@ -923,9 +938,14 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   background-color: #121212;
   width: 420px;
   border-radius: 8px;
+<<<<<<< HEAD
   padding: 1rem 0 1rem 1rem;
   position: relative;
   height: calc(100% - 65px);
+=======
+  padding: 1rem;
+  position: relative;
+>>>>>>> origin/index
 }
 .right-side .right-resize-handle {
   position: absolute;
@@ -949,8 +969,11 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   flex-direction: row;
   gap: 0;
   width: 100%;
+<<<<<<< HEAD
   padding-bottom: 15px;
   padding-right: 1rem;
+=======
+>>>>>>> origin/index
 }
 .right-side .right-top-navigation p {
   font-size: 1rem;
@@ -995,6 +1018,7 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
 .right-side .right-top-navigation .top-icons i:hover.fa-ellipsis {
   background-color: transparent;
 }
+<<<<<<< HEAD
 .right-side .scroll-section {
   width: 100%;
   height: 100%;
@@ -1026,6 +1050,21 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
 }
 .right-side .scroll-section .video-btn {
   display: none;
+=======
+.right-side .big-album-cover-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.right-side .video-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+>>>>>>> origin/index
   gap: 10px;
   color: white;
   font-size: 0.8rem;
@@ -1037,6 +1076,7 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   font-weight: 600;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .right-side .scroll-section .video-btn:hover {
   transform: scale(1.02);
 }
@@ -1045,6 +1085,16 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   font-weight: 200;
 }
 .right-side .scroll-section .song-info {
+=======
+.right-side .video-btn:hover {
+  transform: scale(1.02);
+}
+.right-side .video-btn i {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+.right-side .song-info {
+>>>>>>> origin/index
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -1053,7 +1103,11 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   gap: 0;
   margin-top: 15px;
 }
+<<<<<<< HEAD
 .right-side .scroll-section .song-info .icon-wrapper {
+=======
+.right-side .song-info .icon-wrapper {
+>>>>>>> origin/index
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1061,15 +1115,24 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   gap: 0;
   gap: 15px;
 }
+<<<<<<< HEAD
 .right-side .scroll-section .song-info .icon-wrapper .fa-arrow-up-right-from-square {
   display: none;
 }
 .right-side .scroll-section .song-info .fa-circle-plus,
 .right-side .scroll-section .song-info .fa-arrow-up-right-from-square {
+=======
+.right-side .song-info .icon-wrapper .fa-arrow-up-right-from-square {
+  display: none;
+}
+.right-side .song-info .fa-circle-plus,
+.right-side .song-info .fa-arrow-up-right-from-square {
+>>>>>>> origin/index
   font-size: 1.3rem;
   color: white;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .right-side .scroll-section .song-info .fa-circle-plus:hover,
 .right-side .scroll-section .song-info .fa-arrow-up-right-from-square:hover {
   transform: scale(1.02);
@@ -1081,6 +1144,19 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   color: white;
 }
 .right-side .scroll-section .song-info .song-text {
+=======
+.right-side .song-info .fa-circle-plus:hover,
+.right-side .song-info .fa-arrow-up-right-from-square:hover {
+  transform: scale(1.02);
+}
+.right-side .song-info .fa-arrow-up-right-from-square {
+  color: #b3b3b3;
+}
+.right-side .song-info .fa-arrow-up-right-from-square:hover {
+  color: white;
+}
+.right-side .song-info .song-text {
+>>>>>>> origin/index
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -1088,11 +1164,16 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   gap: 0;
   color: white;
 }
+<<<<<<< HEAD
 .right-side .scroll-section .song-info .song-text .song-title {
+=======
+.right-side .song-info .song-text .song-title {
+>>>>>>> origin/index
   font-weight: 600;
   font-size: 1.4rem;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .right-side .scroll-section .song-info .song-text .song-title:hover {
   text-decoration: underline;
 }
@@ -1264,4 +1345,22 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
 .right-side .scroll-section .credits .artist-wrapper .follow-btn:hover {
   transform: scale(1.05);
   border-color: white;
+=======
+.right-side .song-info .song-text .song-title:hover {
+  text-decoration: underline;
+}
+.right-side .song-info .song-text .song-artists {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+.right-side .song-info .song-text .song-artists span {
+  cursor: pointer;
+}
+.right-side .song-info .song-text .song-artists span:hover {
+  color: white;
+  text-decoration: underline;
+}
+.right-side .song-info:hover .fa-arrow-up-right-from-square {
+  display: block;
+>>>>>>> origin/index
 }/*# sourceMappingURL=style.css.map */
