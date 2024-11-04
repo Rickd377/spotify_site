@@ -1,6 +1,6 @@
 .main-page {
-  max-height: 759px;
   background-color: $side_color;
   border-radius: 8px;
   flex-grow: 1;
+  height: calc(100% - 65px);
 }

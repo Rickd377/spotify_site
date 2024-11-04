@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const chevronIcon = document.querySelector(".fa-chevron-up");
-  const caretIcon = document.querySelector(".fa-light.fa-square-caret-right");
+  const caretIcon = document.querySelector(".fa-light.fa-square-caret-right.footerchevron");
   const rightSide = document.querySelector(".right-side");
   
   // Set initial state

@@ -39,4 +39,5 @@ main {
   display: flex;
   gap: 8px;
   flex-grow: 1;
+  height: calc(100vh - 88px);
 }
