@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const rightResizeHandle = rightSide.querySelector('.right-resize-handle');
   const playlistList = document.querySelector('.left-playlist-list');
   const sortBtns = document.querySelector('.sort-btns');
+  const rightTopNavigation = document.querySelector('.right-top-navigation');
+  const scrollSection = document.querySelector('.scroll-section');
 
   playlistList.addEventListener('scroll', function() {
     if (playlistList.scrollTop > 0) {
@@ -14,8 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  scrollSection.addEventListener('scroll', function() {
+    if (scrollSection.scrollTop > 0) {
+      rightTopNavigation.classList.add('scrolled');
+    } else {
+      rightTopNavigation.classList.remove('scrolled');
+    }
+  });
+
   let rightSideScaled = false;
-  let rightSideWidth = 420; // Initial width of the right side
+  let rightSideWidth = 420;
 
   function resizeLeftSide(e) {
     e.preventDefault();

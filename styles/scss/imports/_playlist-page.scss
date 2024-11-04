@@ -1,0 +1,44 @@
+.playlist-page {
+
+  .playlist-header {
+    @include flex(flex-start, center, row, 1.4rem);
+    height: 280px;
+    padding: 1.6rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: linear-gradient(#4a3591, #2a1f51);
+
+    .big-img {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .text-wrapper {
+      @include flex(flex-end, start, column, 1rem);
+      align-self: end;
+
+      .playlist-type {
+        font-size: .8rem;
+        color: $white_color;
+      }
+
+      .playlist-title {
+        font-size: 6rem;
+        font-weight: bold;
+        color: $white_color;
+        line-height: 1;
+        letter-spacing: -3px;
+      }
+
+      .name-amount {
+        font-size: 0.8rem;
+        color: rgba($search-text_color, 0.8);
+
+        span {
+          color: $white_color;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

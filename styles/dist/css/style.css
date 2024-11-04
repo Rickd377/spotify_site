@@ -734,7 +734,7 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   position: absolute;
   width: 108%;
   height: 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
@@ -951,6 +951,20 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   width: 100%;
   padding-bottom: 15px;
   padding-right: 1rem;
+  position: relative;
+}
+.right-side .right-top-navigation::before {
+  content: "";
+  position: absolute;
+  width: 104%;
+  height: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);
+  top: 100%;
+  right: 0;
+  display: none;
+}
+.right-side .right-top-navigation.scrolled::before {
+  display: block;
 }
 .right-side .right-top-navigation p {
   font-size: 1rem;
@@ -1478,4 +1492,48 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   bottom: 1.8rem;
   left: -4rem;
   transform: translateX(-50%);
+}
+
+.playlist-page .playlist-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.4rem;
+  height: 280px;
+  padding: 1.6rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: linear-gradient(#4a3591, #2a1f51);
+}
+.playlist-page .playlist-header .big-img {
+  height: 100%;
+  border-radius: 4px;
+}
+.playlist-page .playlist-header .text-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: end;
+}
+.playlist-page .playlist-header .text-wrapper .playlist-type {
+  font-size: 0.8rem;
+  color: white;
+}
+.playlist-page .playlist-header .text-wrapper .playlist-title {
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+.playlist-page .playlist-header .text-wrapper .name-amount {
+  font-size: 0.8rem;
+  color: rgba(179, 179, 179, 0.8);
+}
+.playlist-page .playlist-header .text-wrapper .name-amount span {
+  color: white;
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */

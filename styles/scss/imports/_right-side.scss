@@ -30,6 +30,22 @@
     width: 100%;
     padding-bottom: 15px;
     padding-right: 1rem;
+    position: relative;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      width: 104%;
+      height: 20px;
+      background: linear-gradient(rgba($header_color, 0.3), transparent);
+      top: 100%;
+      right: 0;
+      display: none;
+    }
+  
+    &.scrolled::before {
+      display: block;
+    }
     
     p {
       font-size: 1rem;
