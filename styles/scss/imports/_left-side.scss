@@ -254,6 +254,10 @@
           overflow: hidden;
           white-space: nowrap;
           width: 100%;
+
+          &.active {
+            color: $spotify_color;
+          }
         }
         
         .playlist-type {
