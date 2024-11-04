@@ -264,7 +264,7 @@
 
           &:hover {
             transform: scale(1.05);
-            border-color: white;
+            border-color: $white_color;
           }
         }
       }
@@ -279,6 +279,76 @@
         color: $search-text_color;
         width: calc(100% - 2rem);
         font-size: 0.9rem;
+      }
+    }
+
+    .credits {
+      width: 100%;
+      padding: 1rem;
+      background-color: $nav_color;
+      margin-top: 1rem;
+      border-radius: 8px;
+
+      .top-wrapper {
+        @include flex(space-between);
+
+        .credits-title {
+          font-size: 1rem;
+          color: $white_color;
+          font-weight: 600;
+        }
+
+        .show-all-btn {
+          font-size: 0.9rem;
+          color: $search-text_color;
+          cursor: pointer;
+          font-weight: 600;
+
+          &:hover {
+            color: $white_color;
+            transform: scale(1.03);
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .artist-wrapper {
+        @include flex(space-between, center);
+        margin-top: 15px;
+
+        .name-wrapper {
+          @include flex(center, flex-start, column, .2rem);
+
+          .artist-name {
+            font-size: 1rem;
+            color: $white_color;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .artist-type {
+            font-size: 0.85rem;
+            color: $search-text_color;
+          }
+        }
+
+        .follow-btn {
+          background-color: $side_color;
+          color: $white_color;
+          font-size: 0.9rem;
+          border: 1px solid $search-text_color;
+          padding: 5px 15px;
+          border-radius: 50px;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.05);
+            border-color: $white_color;
+          }
+        }
       }
     }
   }
