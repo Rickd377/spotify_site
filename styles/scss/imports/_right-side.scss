@@ -320,7 +320,7 @@
           @include flex(center, flex-start, column, .2rem);
 
           .artist-name {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: $white_color;
 
             &:hover {
@@ -347,6 +347,111 @@
           &:hover {
             transform: scale(1.05);
             border-color: $white_color;
+          }
+        }
+      }
+    }
+
+    .tour {
+      width: 100%;
+      padding: .4rem;
+      background-color: $nav_color;
+      margin-top: 1rem;
+      border-radius: 8px;
+
+      .top-wrapper {
+        @include flex(space-between);
+        padding: .6rem;
+        padding-bottom: 10px;
+
+        .tour-title {
+          font-size: 1rem;
+          color: $white_color;
+          font-weight: 600;
+        }
+
+        .show-all-btn {
+          font-size: 0.9rem;
+          color: $search-text_color;
+          cursor: pointer;
+          font-weight: 600;
+
+          &:hover {
+            color: $white_color;
+            transform: scale(1.03);
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .event {
+        @include flex(flex-start);
+        gap: 1rem;
+        padding: .7rem .5rem;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $nav-hover_color;
+          
+          .month,
+          .day,
+          .city,
+          .artist-name,
+          .time-location {
+            text-decoration: underline;
+            text-decoration-color: $white_color;
+          }
+        }
+
+        .image-look {
+          min-width: 60px;
+          min-height: 60px;
+          border-radius: 4px;
+          background-color: black;
+          position: relative;
+          color: $white_color;
+
+          .month {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            font-weight: 600;
+            font-size: 0.75rem;
+            transform: translateX(-50%);
+          }
+
+          .day {
+            position: absolute;
+            top: 22px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        .text-wrapper {
+          width: 100%;
+
+          .city,
+          .artist-name,
+          .time-location {
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+
+          .city {
+            font-size: 0.95rem;
+            color: $white_color;
+          }
+
+          .artist-name,
+          .time-location {
+            font-size: 0.80rem;
+            color: $search-text_color;
           }
         }
       }
