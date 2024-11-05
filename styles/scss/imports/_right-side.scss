@@ -338,6 +338,7 @@
           .artist-name {
             font-size: 0.95rem;
             color: $white_color;
+            cursor: pointer;
 
             &:hover {
               text-decoration: underline;

@@ -55,7 +55,7 @@
 
     .play-nav {
       @include flex(space-between);
-      padding: 1.5rem 1.6rem;
+      padding: 1.5rem 3.2rem 1.5rem 1.6rem;
 
       .play-icon {
         @include flex();
@@ -83,10 +83,6 @@
         gap: 8px;
         color: $search-text_color;
         font-size: 0.9rem;
-
-        &:hover {
-          color: $white_color;
-        }
       }
     }
   }

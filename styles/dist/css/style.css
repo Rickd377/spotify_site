@@ -1260,6 +1260,7 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
 .right-side .scroll-section .credits .artist-wrapper .name-wrapper .artist-name {
   font-size: 0.95rem;
   color: white;
+  cursor: pointer;
 }
 .right-side .scroll-section .credits .artist-wrapper .name-wrapper .artist-name:hover {
   text-decoration: underline;
@@ -1556,7 +1557,7 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   align-items: center;
   flex-direction: row;
   gap: 0;
-  padding: 1.5rem 1.6rem;
+  padding: 1.5rem 3.2rem 1.5rem 1.6rem;
 }
 .playlist-page .playlist-content .play-nav .play-icon {
   display: flex;
@@ -1593,9 +1594,6 @@ footer .footer-right .volume-container:hover progress::-moz-progress-bar {
   gap: 8px;
   color: #b3b3b3;
   font-size: 0.9rem;
-}
-.playlist-page .playlist-content .play-nav .icon-wrapper:hover {
-  color: white;
 }
 .playlist-page .song-content {
   width: calc(100% - 3.2rem);
